@@ -40,13 +40,12 @@ export const ZONES: Zone[] = [
     primaryAction: {
       title: "Nghe truyện cổ tích",
       subtitle: "Sự tích Thạch Sanh · giọng kể",
-      storagePath: "Truyện cổ tích Việt Nam - Thạch Sanh.mp3",
+      storagePath: "thach-sanh.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc thiếu nhi",
       subtitle: "Nhạc không lời · thư giãn",
-      storagePath:
-        "Nhạc thiếu nhi không lời hay nhất cho bé - Giúp trẻ thư giãn.mp3",
+      storagePath: "nhac-thu-gian.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -62,12 +61,12 @@ export const ZONES: Zone[] = [
     primaryAction: {
       title: "Nghe truyện cổ tích",
       subtitle: "Sự tích Thánh Gióng · giọng kể",
-      storagePath: "Truyện cổ tích Việt Nam - THÁNH GIÓNG.mp3",
+      storagePath: "thanh-giong.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc thiếu nhi",
       subtitle: "Nhạc không lời · vui nhộn",
-      storagePath: "Những Bản Nhạc Không Lời Vui Nhộn Dành Cho Bé Yêu.mp3",
+      storagePath: "nhac-vui-nhon.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -83,13 +82,12 @@ export const ZONES: Zone[] = [
     primaryAction: {
       title: "Nghe truyện cổ tích",
       subtitle: "Cây tre trăm đốt · giọng kể",
-      storagePath: "Truyện cổ tích Việt Nam - Cây tre trăm đốt.mp3",
+      storagePath: "cay-tre-tram-dot.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc nền nhẹ",
       subtitle: "Nhạc không lời cho bé tô màu",
-      storagePath:
-        "Nhạc thiếu nhi không lời hay nhất cho bé - Giúp trẻ thư giãn.mp3",
+      storagePath: "nhac-thu-gian.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -105,13 +103,12 @@ export const ZONES: Zone[] = [
     primaryAction: {
       title: "Nghe nhạc thư giãn",
       subtitle: "Không lời · hòa tấu nhẹ nhàng",
-      storagePath:
-        "Nhạc thiếu nhi không lời hay nhất cho bé - Giúp trẻ thư giãn.mp3",
+      storagePath: "nhac-thu-gian.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc vui nhộn",
       subtitle: "Đổi không khí · giai điệu rộn ràng",
-      storagePath: "Những Bản Nhạc Không Lời Vui Nhộn Dành Cho Bé Yêu.mp3",
+      storagePath: "nhac-vui-nhon.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -127,12 +124,12 @@ export const ZONES: Zone[] = [
     primaryAction: {
       title: "Nghe truyện cổ tích",
       subtitle: "Sơn Tinh Thủy Tinh · giọng kể",
-      storagePath: "Truyện cổ tích Việt Nam - Sơn Tinh Thủy Tinh.mp3",
+      storagePath: "son-tinh-thuy-tinh.mp3",
     },
     secondaryAction: {
       title: "Nghe truyện cổ tích",
       subtitle: "Sói Độc Ác Và 3 Chú Thỏ · giọng kể",
-      storagePath: "Truyện cổ tích Việt Nam - Sói Độc Ác Và 3 Chú Thỏ.mp3",
+      storagePath: "soi-doc-ac-va-3-chu-tho.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
