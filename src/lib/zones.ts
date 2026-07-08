@@ -32,7 +32,7 @@ export const ZONES: Zone[] = [
     slug: "tru-mosaic",
     eyebrow: "Trụ điêu khắc · Khu vui chơi",
     art: "nghe",
-    title: "Sự Tích Thạch Sanh",
+    title: "Thạch Sanh + Nhạc Thư Giãn",
     subtitle:
       "Chàng trai nghèo dũng cảm diệt chằn tinh, cứu công chúa và trở thành người anh hùng được dân gian ngợi ca — người gác cổng của khu vui chơi cũng mạnh mẽ như thế!",
     durationLabel: "8 phút",
@@ -53,7 +53,7 @@ export const ZONES: Zone[] = [
     slug: "khu-du-quay",
     eyebrow: "Khu đu quay · Khu vui chơi",
     art: "ngua-go",
-    title: "Ngựa Gỗ Quay Vòng",
+    title: "Thánh Gióng + Nhạc Vui Nhộn",
     subtitle:
       "Chú ngựa gỗ trên đu quay mang dáng dấp ngựa sắt của Thánh Gióng. Cùng nghe chuyện và nhún nhảy theo điệu nhạc vui nhé!",
     durationLabel: "15 phút",
@@ -74,7 +74,7 @@ export const ZONES: Zone[] = [
     slug: "khu-ve",
     eyebrow: "Góc vẽ · Khu vui chơi",
     art: "chu-teu",
-    title: "Cây Tre Trăm Đốt",
+    title: "Cây Tre Trăm Đốt + Jack Và Cây Đậu Thần",
     subtitle:
       "Anh nông dân hiền lành được Bụt giúp phép thần kỳ nối trăm đốt tre thành một cây dài. Hai câu chuyện đầy phép màu cho góc vẽ thêm sống động!",
     durationLabel: "8 phút",
@@ -95,7 +95,7 @@ export const ZONES: Zone[] = [
     slug: "goc-nghi",
     eyebrow: "Góc nghỉ · Khu vui chơi",
     art: "hoa-sen",
-    title: "Khoảng Lặng Trong Vườn",
+    title: "Nhạc Thư Giãn + Nhạc Vui Nhộn",
     subtitle:
       "Một chút thư giãn cho ba mẹ trong lúc bé vui chơi — nhạc không lời nhẹ nhàng, dịu êm như hoa sen trong đầm.",
     durationLabel: "27 phút",
@@ -116,7 +116,7 @@ export const ZONES: Zone[] = [
     slug: "cong-vao",
     eyebrow: "Cổng vào · Khu vui chơi",
     art: "cong-tam-quan",
-    title: "Chào Mừng Đến Sân Chơi",
+    title: "Sơn Tinh Thủy Tinh + Sói Độc Ác Và 3 Chú Thỏ",
     subtitle:
       "Mỗi góc trong sân chơi đều có một mã QR riêng để nghe truyện và nhạc dành cho bé. Nghe thử hai câu chuyện mở đầu ngay tại cổng vào nhé!",
     durationLabel: "7 phút",
