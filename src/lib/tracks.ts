@@ -58,11 +58,4 @@ export const TRACKS: Track[] = [
     storagePath: "nhac-thu-gian.mp3",
     fallbackDuration: 1612,
   },
-  {
-    title: "Nhạc Vui Nhộn",
-    subtitle: "Nhạc thiếu nhi không lời",
-    kind: "music",
-    storagePath: "nhac-vui-nhon.mp3",
-    fallbackDuration: 1250,
-  },
 ];
