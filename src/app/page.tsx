@@ -24,7 +24,14 @@ export default async function AdminPage() {
         width: 168,
         color: { dark: "#3A2A1A", light: "#FBF3DE" },
       });
-      return { zone, url, qrSvg };
+      // Larger, higher-res PNG for printing — SVG display above is for on-screen preview only.
+      const qrPngDataUrl = await QRCode.toDataURL(url, {
+        type: "image/png",
+        margin: 2,
+        width: 1024,
+        color: { dark: "#3A2A1A", light: "#FBF3DE" },
+      });
+      return { zone, url, qrSvg, qrPngDataUrl };
     })
   );
 
@@ -43,7 +50,7 @@ export default async function AdminPage() {
         </header>
 
         <ul className="divide-y divide-ink/10 rounded-2xl border border-ink/10 bg-white/40">
-          {rows.map(({ zone, url, qrSvg }) => (
+          {rows.map(({ zone, url, qrSvg, qrPngDataUrl }) => (
             <li
               key={zone.slug}
               className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center"
@@ -59,13 +66,36 @@ export default async function AdminPage() {
                   {url}
                 </p>
               </div>
-              <Link
-                href={`/qr/${zone.slug}`}
-                target="_blank"
-                className="inline-flex h-11 shrink-0 items-center justify-center rounded-lg border border-ink/20 px-4 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
-              >
-                Mở trang →
-              </Link>
+              <div className="flex shrink-0 gap-2">
+                <a
+                  href={qrPngDataUrl}
+                  download={`qr-${zone.slug}.png`}
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-ink px-4 text-sm font-medium text-paper transition-colors hover:bg-ink/85"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4.5 18.5v1a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-1"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Tải ảnh QR
+                </a>
+                <Link
+                  href={`/qr/${zone.slug}`}
+                  target="_blank"
+                  className="inline-flex h-11 items-center justify-center rounded-lg border border-ink/20 px-4 text-sm font-medium text-ink transition-colors hover:bg-ink/5"
+                >
+                  Mở trang →
+                </Link>
+              </div>
             </li>
           ))}
         </ul>
