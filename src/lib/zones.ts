@@ -4,7 +4,7 @@ export type ZoneAction = {
   /** small caption under the title */
   subtitle: string;
   /**
-   * Object path inside the Supabase "tramkyuc_audio" storage bucket, e.g. "tru-mosaic/story.mp3".
+   * Object path (filename) inside the Supabase "tramkyuc_audio" storage bucket root.
    * Leave empty until the file is uploaded — the player shows a "chưa có" state instead.
    */
   storagePath: string;
@@ -32,20 +32,21 @@ export const ZONES: Zone[] = [
     slug: "tru-mosaic",
     eyebrow: "Trụ điêu khắc · Khu vui chơi",
     art: "nghe",
-    title: "Sự tích Con Nghê",
+    title: "Sự Tích Thạch Sanh",
     subtitle:
-      "Vì sao Nghê được đặt trước cổng để canh giữ niềm vui và xua đuổi điều xấu? Cùng nghe câu chuyện dân gian nhé!",
-    durationLabel: "6 phút",
+      "Chàng trai nghèo dũng cảm diệt chằn tinh, cứu công chúa và trở thành người anh hùng được dân gian ngợi ca — người gác cổng của khu vui chơi cũng mạnh mẽ như thế!",
+    durationLabel: "8 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
       title: "Nghe truyện cổ tích",
-      subtitle: "Sự tích Con Nghê · giọng kể",
-      storagePath: "tru-mosaic/story.mp3",
+      subtitle: "Sự tích Thạch Sanh · giọng kể",
+      storagePath: "Truyện cổ tích Việt Nam - Thạch Sanh.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc thiếu nhi",
-      subtitle: "Bắc Kim Thang · bản phối nhẹ",
-      storagePath: "tru-mosaic/music.mp3",
+      subtitle: "Nhạc không lời · thư giãn",
+      storagePath:
+        "Nhạc thiếu nhi không lời hay nhất cho bé - Giúp trẻ thư giãn.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -55,18 +56,18 @@ export const ZONES: Zone[] = [
     art: "ngua-go",
     title: "Ngựa Gỗ Quay Vòng",
     subtitle:
-      "Chú ngựa gỗ trên đu quay mang dáng dấp ngựa sắt của Thánh Gióng. Cùng nghe chuyện và nhún nhảy theo điệu dân ca nhé!",
-    durationLabel: "5 phút",
+      "Chú ngựa gỗ trên đu quay mang dáng dấp ngựa sắt của Thánh Gióng. Cùng nghe chuyện và nhún nhảy theo điệu nhạc vui nhé!",
+    durationLabel: "15 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
       title: "Nghe truyện cổ tích",
       subtitle: "Sự tích Thánh Gióng · giọng kể",
-      storagePath: "khu-du-quay/story.mp3",
+      storagePath: "Truyện cổ tích Việt Nam - THÁNH GIÓNG.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc thiếu nhi",
-      subtitle: "Rồng rắn lên mây · bản phối vui",
-      storagePath: "khu-du-quay/music.mp3",
+      subtitle: "Nhạc không lời · vui nhộn",
+      storagePath: "Những Bản Nhạc Không Lời Vui Nhộn Dành Cho Bé Yêu.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -74,20 +75,21 @@ export const ZONES: Zone[] = [
     slug: "khu-ve",
     eyebrow: "Góc vẽ · Khu vui chơi",
     art: "chu-teu",
-    title: "Chú Tễu Và Hộp Màu",
+    title: "Cây Tre Trăm Đốt",
     subtitle:
-      "Chú Tễu tinh nghịch mời bé vừa tô màu vừa nghe chuyện. Bức tranh sẽ đẹp hơn khi có một câu chuyện đi cùng!",
-    durationLabel: "7 phút",
+      "Anh nông dân hiền lành được Bụt giúp phép thần kỳ nối trăm đốt tre thành một cây dài — một câu chuyện đầy phép màu cho góc vẽ thêm sống động!",
+    durationLabel: "8 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
       title: "Nghe truyện cổ tích",
-      subtitle: "Chú Tễu và hộp màu nhiệm màu",
-      storagePath: "khu-ve/story.mp3",
+      subtitle: "Cây tre trăm đốt · giọng kể",
+      storagePath: "Truyện cổ tích Việt Nam - Cây tre trăm đốt.mp3",
     },
     secondaryAction: {
       title: "Nghe nhạc nền nhẹ",
       subtitle: "Nhạc không lời cho bé tô màu",
-      storagePath: "khu-ve/music.mp3",
+      storagePath:
+        "Nhạc thiếu nhi không lời hay nhất cho bé - Giúp trẻ thư giãn.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -98,17 +100,18 @@ export const ZONES: Zone[] = [
     title: "Khoảng Lặng Trong Vườn",
     subtitle:
       "Một chút thư giãn cho ba mẹ trong lúc bé vui chơi — nhạc không lời nhẹ nhàng, dịu êm như hoa sen trong đầm.",
-    durationLabel: "20 phút",
+    durationLabel: "27 phút",
     narratorLabel: "Không lời · thư giãn",
     primaryAction: {
       title: "Nghe nhạc thư giãn",
       subtitle: "Không lời · hòa tấu nhẹ nhàng",
-      storagePath: "goc-nghi/story.mp3",
+      storagePath:
+        "Nhạc thiếu nhi không lời hay nhất cho bé - Giúp trẻ thư giãn.mp3",
     },
     secondaryAction: {
-      title: "Nghe nhạc ru dân ca",
-      subtitle: "Ru con · giai điệu êm dịu",
-      storagePath: "goc-nghi/music.mp3",
+      title: "Nghe nhạc vui nhộn",
+      subtitle: "Đổi không khí · giai điệu rộn ràng",
+      storagePath: "Những Bản Nhạc Không Lời Vui Nhộn Dành Cho Bé Yêu.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -118,18 +121,18 @@ export const ZONES: Zone[] = [
     art: "cong-tam-quan",
     title: "Chào Mừng Đến Sân Chơi",
     subtitle:
-      "Mỗi góc trong sân chơi đều có một mã QR riêng — quét mã dán trên hình vẽ để nghe truyện và nhạc dành cho bé.",
-    durationLabel: "2 phút",
-    narratorLabel: "Giọng dẫn phụ huynh",
+      "Mỗi góc trong sân chơi đều có một mã QR riêng để nghe truyện và nhạc dành cho bé. Nghe thử hai câu chuyện mở đầu ngay tại cổng vào nhé!",
+    durationLabel: "7 phút",
+    narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
-      title: "Nghe lời chào mừng",
-      subtitle: "Giới thiệu sân chơi",
-      storagePath: "cong-vao/story.mp3",
+      title: "Nghe truyện cổ tích",
+      subtitle: "Sơn Tinh Thủy Tinh · giọng kể",
+      storagePath: "Truyện cổ tích Việt Nam - Sơn Tinh Thủy Tinh.mp3",
     },
     secondaryAction: {
-      title: "Nghe hướng dẫn quét mã",
-      subtitle: "Cách dùng QR trong sân chơi",
-      storagePath: "cong-vao/music.mp3",
+      title: "Nghe truyện cổ tích",
+      subtitle: "Sói Độc Ác Và 3 Chú Thỏ · giọng kể",
+      storagePath: "Truyện cổ tích Việt Nam - Sói Độc Ác Và 3 Chú Thỏ.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },

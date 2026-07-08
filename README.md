@@ -18,10 +18,10 @@ mã QR của 5 khu vực. Mỗi mã dẫn tới `/qr/<ten-khu>`.
 
 1. Trong dashboard Supabase, vào **Storage** → tạo bucket tên `tramkyuc_audio`,
    đặt **Public**.
-2. Tải file mp3 lên theo đúng đường dẫn quy ước trong
-   [`src/lib/zones.ts`](./src/lib/zones.ts) — mỗi khu có 2 file:
-   `<ten-khu>/story.mp3` (truyện) và `<ten-khu>/music.mp3` (nhạc). Ví dụ:
-   `tru-mosaic/story.mp3`, `tru-mosaic/music.mp3`.
+2. Tải file mp3 lên **thẳng vào gốc bucket** (không cần tạo thư mục con),
+   giữ nguyên tên file — mỗi khu tham chiếu tới đúng tên file trong
+   [`src/lib/zones.ts`](./src/lib/zones.ts) (trường `storagePath`). Đổi nội
+   dung khu nào thì sửa `storagePath` của khu đó trỏ sang file mới.
 3. Copy **Project URL** (Project Settings → Integrations → Data API) và
    **publishable key** (Project Settings → API Keys) vào `.env.local` (xem
    `.env.local.example`).

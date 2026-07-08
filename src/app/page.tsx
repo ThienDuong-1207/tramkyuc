@@ -102,16 +102,9 @@ export default async function AdminPage() {
 
         <p className="mt-8 text-xs text-ink/50">
           File audio (truyện & nhạc) được lưu trong Supabase Storage, bucket{" "}
-          <code className="rounded bg-ink/10 px-1 py-0.5">tramkyuc_audio</code>, theo
-          đường dẫn <code className="rounded bg-ink/10 px-1 py-0.5">
-            ten-khu/story.mp3
-          </code>{" "}
-          và{" "}
-          <code className="rounded bg-ink/10 px-1 py-0.5">
-            ten-khu/music.mp3
-          </code>
-          . Trang sẽ hiện &quot;Chưa có file audio&quot; cho đến khi file được
-          tải lên.
+          <code className="rounded bg-ink/10 px-1 py-0.5">tramkyuc_audio</code>{" "}
+          (tải thẳng vào gốc bucket, giữ nguyên tên file). Trang sẽ hiện
+          &quot;Chưa có file audio&quot; cho đến khi file được tải lên.
         </p>
       </div>
     </div>
