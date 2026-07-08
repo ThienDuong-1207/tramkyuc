@@ -37,6 +37,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# source audio — belongs in Supabase Storage, not git (large binaries)
+/tramkyucmp3/
+*.zip
+*.mp3
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
