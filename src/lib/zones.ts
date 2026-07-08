@@ -1,5 +1,5 @@
 export type ZoneAction = {
-  /** Baloo 2 label shown on the button */
+  /** Baloo 2 label shown on the button — matches the audio file's content name directly */
   title: string;
   /** small caption under the title */
   subtitle: string;
@@ -38,13 +38,13 @@ export const ZONES: Zone[] = [
     durationLabel: "8 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
-      title: "Nghe truyện cổ tích",
-      subtitle: "Sự tích Thạch Sanh · giọng kể",
+      title: "Truyện Thạch Sanh",
+      subtitle: "Truyện cổ tích · giọng kể",
       storagePath: "thach-sanh.mp3",
     },
     secondaryAction: {
-      title: "Nghe nhạc thiếu nhi",
-      subtitle: "Nhạc không lời · thư giãn",
+      title: "Nhạc Thư Giãn",
+      subtitle: "Nhạc thiếu nhi không lời",
       storagePath: "nhac-thu-gian.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
@@ -59,13 +59,13 @@ export const ZONES: Zone[] = [
     durationLabel: "15 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
-      title: "Nghe truyện cổ tích",
-      subtitle: "Sự tích Thánh Gióng · giọng kể",
+      title: "Truyện Thánh Gióng",
+      subtitle: "Truyện cổ tích · giọng kể",
       storagePath: "thanh-giong.mp3",
     },
     secondaryAction: {
-      title: "Nghe nhạc thiếu nhi",
-      subtitle: "Nhạc không lời · vui nhộn",
+      title: "Nhạc Vui Nhộn",
+      subtitle: "Nhạc thiếu nhi không lời",
       storagePath: "nhac-vui-nhon.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
@@ -76,18 +76,18 @@ export const ZONES: Zone[] = [
     art: "chu-teu",
     title: "Cây Tre Trăm Đốt",
     subtitle:
-      "Anh nông dân hiền lành được Bụt giúp phép thần kỳ nối trăm đốt tre thành một cây dài — một câu chuyện đầy phép màu cho góc vẽ thêm sống động!",
+      "Anh nông dân hiền lành được Bụt giúp phép thần kỳ nối trăm đốt tre thành một cây dài. Hai câu chuyện đầy phép màu cho góc vẽ thêm sống động!",
     durationLabel: "8 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
-      title: "Nghe truyện cổ tích",
-      subtitle: "Cây tre trăm đốt · giọng kể",
+      title: "Truyện Cây Tre Trăm Đốt",
+      subtitle: "Truyện cổ tích · giọng kể",
       storagePath: "cay-tre-tram-dot.mp3",
     },
     secondaryAction: {
-      title: "Nghe nhạc nền nhẹ",
-      subtitle: "Nhạc không lời cho bé tô màu",
-      storagePath: "nhac-thu-gian.mp3",
+      title: "Truyện Jack Và Cây Đậu Thần",
+      subtitle: "Truyện cổ tích · giọng kể",
+      storagePath: "jack-va-cay-dau-than.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
   },
@@ -101,13 +101,13 @@ export const ZONES: Zone[] = [
     durationLabel: "27 phút",
     narratorLabel: "Không lời · thư giãn",
     primaryAction: {
-      title: "Nghe nhạc thư giãn",
-      subtitle: "Không lời · hòa tấu nhẹ nhàng",
+      title: "Nhạc Thư Giãn",
+      subtitle: "Nhạc thiếu nhi không lời",
       storagePath: "nhac-thu-gian.mp3",
     },
     secondaryAction: {
-      title: "Nghe nhạc vui nhộn",
-      subtitle: "Đổi không khí · giai điệu rộn ràng",
+      title: "Nhạc Vui Nhộn",
+      subtitle: "Nhạc thiếu nhi không lời",
       storagePath: "nhac-vui-nhon.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
@@ -122,13 +122,13 @@ export const ZONES: Zone[] = [
     durationLabel: "7 phút",
     narratorLabel: "Giọng đọc thiếu nhi",
     primaryAction: {
-      title: "Nghe truyện cổ tích",
-      subtitle: "Sơn Tinh Thủy Tinh · giọng kể",
+      title: "Truyện Sơn Tinh Thủy Tinh",
+      subtitle: "Truyện cổ tích · giọng kể",
       storagePath: "son-tinh-thuy-tinh.mp3",
     },
     secondaryAction: {
-      title: "Nghe truyện cổ tích",
-      subtitle: "Sói Độc Ác Và 3 Chú Thỏ · giọng kể",
+      title: "Truyện Sói Độc Ác Và 3 Chú Thỏ",
+      subtitle: "Truyện cổ tích · giọng kể",
       storagePath: "soi-doc-ac-va-3-chu-tho.mp3",
     },
     footerCredit: "Vó Ngựa · Góc kể chuyện dân gian",
