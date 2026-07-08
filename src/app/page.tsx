@@ -102,7 +102,7 @@ export default async function AdminPage() {
 
         <p className="mt-8 text-xs text-ink/50">
           File audio (truyện & nhạc) được lưu trong Supabase Storage, bucket{" "}
-          <code className="rounded bg-ink/10 px-1 py-0.5">audio</code>, theo
+          <code className="rounded bg-ink/10 px-1 py-0.5">tramkyuc_audio</code>, theo
           đường dẫn <code className="rounded bg-ink/10 px-1 py-0.5">
             ten-khu/story.mp3
           </code>{" "}

@@ -16,14 +16,15 @@ mã QR của 5 khu vực. Mỗi mã dẫn tới `/qr/<ten-khu>`.
 
 ## Cấu hình Supabase Storage (lưu file mp3)
 
-1. Trong dashboard Supabase, vào **Storage** → tạo bucket tên `audio`, đặt
-   **Public**.
+1. Trong dashboard Supabase, vào **Storage** → tạo bucket tên `tramkyuc_audio`,
+   đặt **Public**.
 2. Tải file mp3 lên theo đúng đường dẫn quy ước trong
    [`src/lib/zones.ts`](./src/lib/zones.ts) — mỗi khu có 2 file:
    `<ten-khu>/story.mp3` (truyện) và `<ten-khu>/music.mp3` (nhạc). Ví dụ:
    `tru-mosaic/story.mp3`, `tru-mosaic/music.mp3`.
-3. Copy **Project URL** và **anon public key** (Project Settings → API) vào
-   `.env.local` (xem `.env.local.example`).
+3. Copy **Project URL** (Project Settings → Integrations → Data API) và
+   **publishable key** (Project Settings → API Keys) vào `.env.local` (xem
+   `.env.local.example`).
 
 Cho đến khi file được tải lên, trang sẽ hiện "Chưa có file audio" thay vì
 lỗi — không cần sửa code khi thêm nội dung, chỉ cần tải file lên đúng

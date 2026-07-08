@@ -9,14 +9,14 @@ if (!supabaseUrl || !supabaseAnonKey) {
   );
 }
 
-/** Public, anon-key client. Only used to read from the public "audio" bucket — no auth, no writes from the client. */
+/** Public, anon-key client. Only used to read from the public "tramkyuc_audio" bucket — no auth, no writes from the client. */
 export const supabase =
   supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null;
 
-const AUDIO_BUCKET = "audio";
+const AUDIO_BUCKET = "tramkyuc_audio";
 
 /**
- * Builds the public URL for a file in the "audio" storage bucket.
+ * Builds the public URL for a file in the "tramkyuc_audio" storage bucket.
  * Returns null when the path is empty or Supabase isn't configured yet,
  * so callers can render a "not uploaded yet" state instead of crashing.
  */
