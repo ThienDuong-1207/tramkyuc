@@ -1,6 +1,7 @@
-Trạm Ký Ức — mã QR cho sân chơi bệnh viện. Mỗi khu vực (trụ mosaic, đu quay,
-khu vẽ, góc nghỉ, cổng vào) có một trang riêng phát truyện cổ tích và nhạc
-thiếu nhi khi quét mã. Xem [PRODUCT.md](./PRODUCT.md) và
+Trạm Ký Ức — một mã QR duy nhất cho sân chơi bệnh viện, dán lặp lại ở 5 vị trí
+(trụ mosaic, đu quay, khu vẽ, góc nghỉ, cổng vào). Quét mã mở trang `/nghe`:
+một danh sách truyện cổ tích và nhạc thiếu nhi để bé tự chọn, có thanh tua và
+nút tua nhanh/lùi 10 giây. Xem [PRODUCT.md](./PRODUCT.md) và
 [DESIGN.md](./DESIGN.md) để biết định hướng sản phẩm và hệ thống thiết kế.
 
 ## Chạy dự án
@@ -11,8 +12,9 @@ cp .env.local.example .env.local   # điền thông tin Supabase của bạn
 npm run dev
 ```
 
-Mở [http://localhost:3000](http://localhost:3000) để xem trang admin liệt kê
-mã QR của 5 khu vực. Mỗi mã dẫn tới `/qr/<ten-khu>`.
+Mở [http://localhost:3000](http://localhost:3000) để xem trang admin — mã QR
+duy nhất để in, cộng danh sách file audio cần có. Trang nghe thật nằm ở
+`/nghe`.
 
 ## Cấu hình Supabase Storage (lưu file mp3)
 
@@ -22,15 +24,14 @@ mã QR của 5 khu vực. Mỗi mã dẫn tới `/qr/<ten-khu>`.
    Supabase Storage **không chấp nhận tên file có dấu tiếng Việt** (báo lỗi
    "File name is invalid") — đặt tên file bằng chữ không dấu, không khoảng
    trắng (vd: `thach-sanh.mp3`) rồi khớp với `storagePath` tương ứng trong
-   [`src/lib/zones.ts`](./src/lib/zones.ts). Đổi nội dung khu nào thì sửa
-   `storagePath` của khu đó trỏ sang file mới.
+   [`src/lib/tracks.ts`](./src/lib/tracks.ts). Thêm/đổi bài nào thì sửa danh
+   sách `TRACKS` trong file đó.
 3. Copy **Project URL** (Project Settings → Integrations → Data API) và
    **publishable key** (Project Settings → API Keys) vào `.env.local` (xem
    `.env.local.example`).
 
-Cho đến khi file được tải lên, trang sẽ hiện "Chưa có file audio" thay vì
-lỗi — không cần sửa code khi thêm nội dung, chỉ cần tải file lên đúng
-đường dẫn.
+Cho đến khi file được tải lên, bài đó sẽ hiện "Chưa có file audio" thay vì
+lỗi — không cần sửa code khi thêm nội dung, chỉ cần tải file lên đúng tên.
 
 ## Triển khai lên Vercel
 

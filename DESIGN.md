@@ -43,25 +43,25 @@ spacing:
   button-padding: "16px 18px"
   action-gap: "12px"
 components:
-  button-story:
+  track-row-story:
+    backgroundColor: "{colors.cream}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.button}"
+  track-row-music:
+    backgroundColor: "{colors.cream}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
+    rounded: "{rounded.button}"
+  track-row-active:
+    backgroundColor: "{colors.cream-deep}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.button}"
+  play-button:
     backgroundColor: "{colors.red}"
     textColor: "{colors.paper}"
-    typography: "{typography.label}"
-    rounded: "{rounded.button}"
-    padding: "{spacing.button-padding}"
-  button-story-hover:
-    backgroundColor: "{colors.red}"
-    textColor: "{colors.paper}"
-  button-music:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.paper}"
-    typography: "{typography.label}"
-    rounded: "{rounded.button}"
-    padding: "{spacing.button-padding}"
-  button-music-hover:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.paper}"
-  card-zone:
+    rounded: "{rounded.pill}"
+  card-page:
     backgroundColor: "{colors.paper}"
     rounded: "{rounded.card}"
   eyebrow-chip:
@@ -76,14 +76,14 @@ components:
 
 **Creative North Star: "Cuốn Sách Sống" (The Living Storybook)**
 
-Every screen is a page in a wooden storybook a child finds propped against the wall art they're already staring at, not an app they navigate. The system is built from one reference implementation — `qr-demo-su-tich-con-nghe.html` (the Sự Tích Con Nghê page) — and every new zone page is a retelling of that same object, not a new invention: warm paper card, a painted folk-art creature floating above a red banner, two oversized buttons, a bouncing "now playing" strip. Nothing here should look tapped out on a laptop; it should look like it was painted for the wall first and the phone second.
+The whole playground shares one printed QR card — scanning it opens a single wooden storybook shelf, not a page tied to one mural. The system is still built from the original reference implementation — `qr-demo-su-tich-con-nghe.html` — but that hero-banner-plus-two-buttons layout is now the header of a scrollable track list, not the whole screen: warm paper card, a painted folk-art gate floating above a red banner, then a stack of tap-to-expand story/music rows, each opening into a scrubbable player in place. Nothing here should look tapped out on a laptop; it should look like it was painted for the wall first and the phone second.
 
 It explicitly rejects: cold SaaS geometry (gradients as decoration, 24–40px card radii, glassmorphism), clinical hospital surfaces (stark white, medical blue/green), and Western cartoon illustration (Disney/Pixar rounding). The palette and motifs stay inside the Đông Hồ / mosaic-guardian folk-art idiom already painted on the playground walls.
 
 **Key Characteristics:**
 - One warm paper card, centered, max 430px wide — the entire experience lives inside it, no site chrome around it.
-- A tall painted-banner header (red-to-red-deep gradient) with a floating folk-art SVG creature and a gold cloud-band horizon.
-- Exactly two primary actions per page: nghe truyện (story, red) and nghe nhạc (music, green) — never more, never fewer.
+- A shorter painted-banner header (red-to-red-deep gradient) with a floating folk-art gate SVG and a gold cloud-band horizon — generic to the whole playground, not tied to one mural, since one QR now serves all five locations.
+- A vertical list of track rows (story rows in red, music rows in green); tapping a row expands it into a seek bar + transport controls in place, collapsing any previously-open row.
 - A dashed hairline separates content from a quiet footer credit; nothing else on the page competes with it.
 
 ## 2. Colors
@@ -108,7 +108,7 @@ A warm, saturated red–gold–green folk palette on a cream-paper ground — no
 - **Ink** (#3A2A1A): all body copy, the eyebrow chip fill, and the footer logo tile. The only near-black in the system; it is warm brown, never true black or gray.
 
 ### Named Rules
-**The Two-Action Rule.** A zone page never shows more than two primary buttons (story, music). Additional content (duration, credit) is metadata, rendered smaller and quieter, never as a third button.
+**The One-List Rule.** All content lives in a single flat scrollable list on the one shared page — no per-location pages, no grouping/tabs by category. Row order is the only structure; color (red/green) is the only category signal.
 
 **The Warm-Only Rule.** No token in this system may be a desaturated gray. Every neutral is a step of `ink` or `cream`/`paper`; if a value needs to read as "muted," lower its opacity against those tokens rather than introducing gray.
 
@@ -120,11 +120,11 @@ A warm, saturated red–gold–green folk palette on a cream-paper ground — no
 **Character:** Baloo 2 is round, thick, and toy-like — it carries every headline, button label, and the eyebrow chip, giving the page a hand-lettered-signboard voice. Be Vietnam Pro is a plain, highly legible Vietnamese-diacritic-safe humanist sans reserved for anything a parent needs to actually read (subtitle, duration, footer credit). The pairing is a deliberate contrast axis: playful display type for what a child taps, quiet body type for what an adult reads.
 
 ### Hierarchy
-- **Display** (800, 28px, line-height 1.15): the zone title (e.g. "Sự tích Con Nghê"), always `red-deep`, always the first thing read.
-- **Label** (700, 17px): button text — the primary word ("Nghe truyện cổ tích") in Baloo 2 inside each action button, always on a colored fill.
-- **Body** (400, 14.5px, line-height 1.5, ~60ch max): the one-sentence hook under the title, `green-deep` at 85% opacity.
-- **Caption** (500, 11.5–13px): duration metadata row, button sub-labels, footer credit, now-playing sub-text — always the quietest layer, opacity 55–80%.
-- **Eyebrow label** (600, 12px, uppercase, letter-spacing 0.08em): the small "Trụ điêu khắc · Khu vui chơi" chip pinned to the banner corner — the only uppercase-tracked text in the system, reserved for that one chip.
+- **Display** (800, 26px, line-height 1.15): the page title ("Nghe Truyện & Nhạc"), always `red-deep`, always the first thing read.
+- **Label** (700, 15.5px): track row titles ("Thạch Sanh", "Nhạc Thư Giãn") in Baloo 2 — named directly after the audio content, never a generic verb phrase like "Nghe truyện".
+- **Body** (400, 14px, line-height 1.5): the one-sentence instruction under the page title.
+- **Caption** (500, 11.5–12.5px): row subtitles, durations, time labels, footer credit — always the quietest layer, opacity 55–80%.
+- **Eyebrow label** (600, 12px, uppercase, letter-spacing 0.08em): the "Sân Chơi · Vó Ngựa" chip pinned to the banner corner — the only uppercase-tracked text in the system, reserved for that one chip.
 
 ### Named Rules
 **The One Eyebrow Rule.** Uppercase tracked labels are reserved for the single zone-identifier chip in the banner corner. Never repeat the eyebrow treatment as a section kicker elsewhere on the page.
@@ -146,42 +146,43 @@ Flat by default; depth comes from warm colored shadows tinted to match the eleme
 
 Every component is tactile and toy-like: thick radii, colored fills, no thin gray outlines.
 
-### Buttons
-- **Shape:** 18px radius (`rounded.button`), full width, stacked vertically with 12px gaps — never side-by-side, since each must be large enough for a child's whole hand.
-- **Primary (Story):** `red` fill, `paper` text, 16×18px padding, leading 42×42px icon tile at 18% white overlay, story-button glow shadow.
-- **Secondary (Music):** identical shape, `green` fill, music-button glow shadow. Same visual weight as Primary — "secondary" refers to list order, not visual hierarchy; both are equally primary actions.
-- **Active/Press:** `transform: scale(0.97)` on `:active`, no color change — press feedback is physical (a squash), not chromatic.
-- **Icon tile:** 42×42px, 12px radius, `rgba(255,255,255,0.18)` fill, centered 22px SVG icon in `paper`.
+### Track Row (signature component)
+- **Shape:** 18px radius (`rounded.button`), full width, stacked vertically with 10px gaps in the list.
+- **At rest:** `cream` fill, a 40×40px rounded-icon tile (12px radius) in `red` for story rows / `green` for music rows with a white play glyph, title (Baloo 2, 15.5px, `ink`) + subtitle (caption, `ink` 60%) stacked left, duration (caption, tabular-nums, `ink` 55%) right-aligned.
+- **Active/expanded:** row background steps to `cream-deep`; the icon glyph swaps to a pause bars glyph; a player panel opens beneath the header inside the same row (see below). Only one row is expanded at a time — opening a new row closes the previous one via shared player state, not per-row state.
+- **Tap target:** the whole row header is a button, min-height 44px.
 
-### Now-Playing Panel
-- **Style:** `cream-deep` fill, 16px radius, appears only after a button is tapped (`display: none` → `flex`), never visible at rest.
-- **Signature Component — the Bounce Bars.** Four thin bars (3px wide, `red` fill, 2px radius) animate height via `scaleY` on a 1s ease-in-out loop with staggered delays (0, 0.15s, 0.3s, 0.45s) — this is the system's one signature motion flourish, reserved exclusively for signaling active audio. It must pause/freeze under `prefers-reduced-motion: reduce`, replaced by a static equalizer glyph.
+### Inline Player Panel
+- **Trigger:** appears only inside the currently-expanded track row; every other row shows just its static header.
+- **Seek bar:** a native `<input type="range">` restyled — 6px track at `rgba(ink, 0.15)`, an 18px `red`-filled thumb with a `paper` ring border and a small drop shadow. Current-time and total-duration labels (caption, tabular-nums) flank the bar.
+- **Transport:** three circular controls centered below the seek bar — 40px ghost-fill (`rgba(ink,0.08)`) skip ±10s buttons flanking a 52px solid `red` play/pause button with the story-button glow shadow. Skip icons are a circular-arrow-with-triangle glyph, not bare chevrons, so the "jump 10s" affordance reads at a glance.
+- **Error state:** if a track has no uploaded file yet, the panel shows a single centered `red-deep` line ("Chưa có file audio…") instead of the seek bar/transport — no broken controls are ever shown.
 
 ### Cards / Containers
-- **Corner Style:** 32px radius (`rounded.card`) — the single largest radius in the system, reserved for the outermost card only. No nested element reuses this radius.
-- **Background:** `paper`, with a tall `red → red-deep` gradient banner clipped to the same outer radius at the top.
+- **Corner Style:** 32px radius (`rounded.card`) — the single largest radius in the system, reserved for the outermost card only. No nested element reuses this radius (track rows top out at 18px).
+- **Background:** `paper`, with a shorter `red → red-deep` gradient banner clipped to the same outer radius at the top.
 - **Shadow Strategy:** card-lift shadow only (see Elevation).
 - **Border:** none — separation is by shadow and color contrast, never a stroke.
-- **Internal Padding:** 28px top, 26px sides, 30px bottom (`spacing.card-padding`).
+- **Internal Padding:** 26px top, 22px sides, 24px bottom around the list.
 
 ### Chips
-- **Eyebrow chip:** `rgba(0,0,0,0.25)` over the banner image with `backdrop-filter: blur(4px)`, `paper` text, 100px pill radius, 7×14px padding — the only place `blur()` appears in the system, justified because it sits over a busy illustrated banner, not as decoration on a flat surface.
+- **Eyebrow chip:** `rgba(0,0,0,0.25)` over the banner image with `backdrop-filter: blur(4px)`, `paper` text, 100px pill radius, 7×14px padding — the only place `blur()` appears in the system, justified because it sits over a busy illustrated banner, not as decoration on a flat surface. Now reads "Sân Chơi · Vó Ngựa" (playground-wide, not per-zone) since one page serves every location.
 
 ### Navigation
-None. Zone pages have zero nav chrome by design (see PRODUCT.md's Instant-and-Disposable principle) — the only wayfinding is a small footer credit line, not a nav bar.
+None. The single `/nghe` page has zero nav chrome by design (see PRODUCT.md's Instant-and-Disposable principle) — the only wayfinding is a small footer credit line, not a nav bar.
 
-### Signature Component: The Floating Creature
-A single hand-painted-style SVG folk creature (170–200px) sits at the base of the banner, animated with a slow 4s `translateY(±8px)` float. Each zone gets its own creature/motif matching its physical mural (guardian lion for the mosaic pillar, a different folk motif per zone), but the float animation, size, and drop-shadow treatment stay identical across all five — the creature changes, the way it breathes does not.
+### Signature Illustration: The Gate
+One hand-painted-style SVG folk motif — the cổng tam quan (three-gate entrance) — sits at the base of the banner, animated with a slow 4s `translateY(±8px)` float. It no longer varies per zone (there is only one page now); it represents the playground as a whole rather than any single mural. Reduced-motion turns the float off entirely (a static illustration, not a substitute animation).
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** keep every zone page a variation of the one card structure (banner → title → two buttons → now-playing → footer); consistency across the five zones is the point.
+- **Do** keep the whole experience on one page/one QR code (One-List Rule) — no per-location routes.
 - **Do** tint every shadow to the color of the element casting it (Tinted-Shadow Rule).
 - **Do** use Baloo 2 for anything a child taps or reads at a glance, Be Vietnam Pro for anything a parent reads closely.
-- **Do** cap primary actions at two per page (Two-Action Rule).
-- **Do** provide a static/instant fallback for the bounce bars and floating-creature animation under `prefers-reduced-motion: reduce`.
-- **Do** keep every button ≥44×44px effective touch target.
+- **Do** collapse any open track row before expanding another — only one player panel visible at a time.
+- **Do** provide a static/instant fallback for the floating-gate animation under `prefers-reduced-motion: reduce`.
+- **Do** keep every button/tap target ≥44×44px, including the skip and seek-thumb controls.
 
 ### Don't:
 - **Don't** introduce gray — no `#888`-style neutrals anywhere; every muted value is ink or cream at reduced opacity (Warm-Only Rule).
@@ -189,4 +190,5 @@ A single hand-painted-style SVG folk creature (170–200px) sits at the base of 
 - **Don't** add glassmorphism/blur anywhere except the one eyebrow chip over the banner illustration.
 - **Don't** add a nav bar, breadcrumb, or multi-page chrome — each zone page is a single disposable scan destination.
 - **Don't** render the illustrations as Western-cartoon (Disney/Pixar) style, sketchy hand-drawn doodles, or generic clip-art — stay inside the Đông Hồ / mosaic-guardian folk idiom.
-- **Don't** use a stark white or medical blue/green background on any zone page; the page background is always `cream`.
+- **Don't** use a stark white or medical blue/green background; the page background is always `cream`.
+- **Don't** reintroduce per-location pages/QR codes — the product decision is one shared code and one scrollable list.
