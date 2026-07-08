@@ -4,7 +4,7 @@ export type ZoneAction = {
   /** small caption under the title */
   subtitle: string;
   /**
-   * Object path (filename) inside the Supabase "tramkyuc_audio" storage bucket root.
+   * Object path (filename) inside the Supabase "tramkyucmp3" storage bucket root.
    * Leave empty until the file is uploaded — the player shows a "chưa có" state instead.
    */
   storagePath: string;

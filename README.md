@@ -16,7 +16,7 @@ mã QR của 5 khu vực. Mỗi mã dẫn tới `/qr/<ten-khu>`.
 
 ## Cấu hình Supabase Storage (lưu file mp3)
 
-1. Trong dashboard Supabase, vào **Storage** → tạo bucket tên `tramkyuc_audio`,
+1. Trong dashboard Supabase, vào **Storage** → tạo bucket tên `tramkyucmp3`,
    đặt **Public**.
 2. Tải file mp3 lên **thẳng vào gốc bucket** (không cần tạo thư mục con).
    Supabase Storage **không chấp nhận tên file có dấu tiếng Việt** (báo lỗi
